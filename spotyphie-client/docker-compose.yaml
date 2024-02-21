@@ -1,0 +1,19 @@
+version: "3.4"
+services:
+ spotyphie_client:
+   image: node:alpine
+   container_name: spotyphie-client
+   entrypoint: /bin/sh -c "npm i && npm start"
+   ports:
+     - ${SPOTYPHIE_CLIENT_PORT}:${SPOTYPHIE_CLIENT_PORT}
+   working_dir: /srv/app
+   volumes:
+     - type: bind
+       source: ./
+       target: /srv/app
+   tty: true
+
+networks:
+  default:  
+    external:
+      name: spotyphie-monolith_default
