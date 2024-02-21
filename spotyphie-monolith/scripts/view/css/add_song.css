@@ -1,0 +1,46 @@
+.file-label {
+    font-family: Baloo, Inter, Times, serif;
+    color: #FAFDFF;
+    display: inline-block;
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    cursor: pointer;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+img {
+  height: 40px;
+  padding: 0;
+}
+
+.upload-preview-img {
+  height: auto;
+  max-width: 200px;
+}
+
+.upload-preview-audio {
+  height: auto;
+  max-width: 1000px;
+}
+
+#song-img-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#song-img {
+  display: block;
+  margin-top: 10px; /* Anda bisa mengatur margin di bagian atas sesuai kebutuhan Anda */
+}
+
+.song-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}

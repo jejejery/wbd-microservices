@@ -1,0 +1,31 @@
+version: '3.8'
+services:
+   spotyphie-monolith-service:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: spotyphie-monolith-service
+    env_file: .env
+    volumes:
+      - ./scripts:/var/www/html/
+    ports:
+      - 8000:80
+    depends_on:
+      - spotyphie-monolith-db
+    
+
+   spotyphie-monolith-db:
+    container_name: spotyphie-monolith-db
+    image: postgres
+    restart: always
+    ports:
+      - ${POSTGRES_MAPPED_PORT}:5432
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
+    env_file: .env
+    
+
+# networks:
+#   default:  
+#     external:
+#       name: spotyphie-rest_default

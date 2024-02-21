@@ -1,0 +1,28 @@
+h1 {
+    margin: 0;
+}
+
+h3 {
+    margin: 0 0 10px 0;
+}
+
+
+#delete-account {
+    background-color: red;
+}
+
+#close-edit-popup {
+    float: right;
+}
+
+#signout-button {
+    background-color: gray;
+}
+
+#textBoxContainer {
+    margin: 5%;
+}
+
+.my-playlist-header {
+    margin-top: 5%;
+}

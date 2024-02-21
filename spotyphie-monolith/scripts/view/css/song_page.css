@@ -1,0 +1,57 @@
+#song-display {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 50px;
+    align-items: center;
+}
+
+h1, h2 {
+    margin: 0;
+    padding: 0;
+}
+
+#song-img {
+    max-width: 200px;
+    height: auto;
+    margin-right: 40px;
+}
+
+#song-title {
+    font-size: 50px;
+}
+
+#song-artist {
+    font-size: 25px;
+}
+
+#song-player {
+    margin-top: 50px;
+}
+
+#delete-song {
+    background-color: red;
+}
+
+#close-edit-popup {
+    float: right;
+}
+
+.move-btn {
+    height: 50px;
+    width: 50px;
+    background-color: #334F5B;
+    color: #FAFDFF;
+}
+
+.move-btn:hover {
+    background-color: #263c46;
+}
+
+#left-song-button {
+    margin-right: auto;
+}
+
+#right-song-button {
+    margin-left: auto;
+}

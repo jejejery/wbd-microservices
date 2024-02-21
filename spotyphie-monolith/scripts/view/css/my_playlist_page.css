@@ -1,0 +1,61 @@
+.vertical-scroll {
+    overflow-y: scroll;
+}
+
+.width-60 {
+    width: 60%;
+}
+
+.container{
+    margin: 20px auto;
+    height: 350px;
+    text-align: left;
+}
+
+.black-background {
+    background-color: black;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+}
+
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.my-playlist-header {
+    font-family: Baloo, Inter, Times, serif;
+    color: #FAFDFF;
+    top:20px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+/* Mengatur styling list-item */
+.playlist-item {
+    display: flex; /* Membuat elemen playlist-item menjadi flex container */
+    flex-direction: column; /* Menyusun elemen-elemen secara vertikal (ke bawah) */
+    align-items: flex-start; /* Menyelaraskan elemen-elemen secara horizontal di tengah */
+    margin-left: 15px;
+}
+
+/* Mengatur styling gambar di dalam list-item */
+.list-img {
+    width: auto; /* Lebar gambar sesuai kebutuhan */
+    height: auto; /* Tinggi gambar menyesuaikan proporsi aslinya */}
+
+.playlist-item button{
+    margin: 2px;
+    width: 680px;
+    height: 90px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #FAFDFF;
+    font-size: larger;
+}

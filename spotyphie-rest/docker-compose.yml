@@ -1,0 +1,51 @@
+version: '3.7'
+
+services:
+
+  spotyphie-rest-db:
+    image: postgres:latest
+    container_name: spotyphie-rest-db
+    restart: unless-stopped
+    ports:
+      - ${SPOTYPHIE_DB_PORT}:5432
+    volumes:
+      - ./db:/db/
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+  
+  spotyphie-rest-service:
+    stdin_open: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: spotyphie-rest-service
+    depends_on:
+      - spotyphie-rest-db
+    expose:
+      - ${SPOTYPHIE_REST_PORT}
+    ports:
+      - ${SPOTYPHIE_REST_PORT}:${SPOTYPHIE_REST_PORT}
+    restart: always
+    command: 
+      - /bin/sh
+      - -c
+      - |
+        npx prisma migrate dev & 
+        sleep 10 
+        npm run dev
+    volumes:
+      - ./src/:/app/src/
+      - ./.env:/app/.env
+      - ./prisma/:/app/prisma/
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    
+volumes:
+  pgadmin-data:
+
+networks:
+  default:  
+    external:
+      name: spotyphie-monolith_default

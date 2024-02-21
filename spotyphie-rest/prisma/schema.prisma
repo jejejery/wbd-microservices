@@ -1,0 +1,35 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model chat {
+  chat_id     String   @id @db.VarChar(255)
+  sender_id   Int
+  receiver_id Int
+  chat_time   DateTime @db.Timestamptz(3)
+  content     String   @db.VarChar(1000)
+}
+
+model referralCode {
+  code    String  @id @db.VarChar(255)
+  user_id Int
+  isValid Boolean @default(true)
+}
+
+model userApp {
+  user_id   Int     @id
+  credits   Int     @default(0)
+  isPremium Boolean @default(false)
+}
+
+model userPremiumSong{
+  user_id   Int     @db.Integer
+  song_id   Int     @db.Integer
+  @@id([user_id, song_id])   
+}

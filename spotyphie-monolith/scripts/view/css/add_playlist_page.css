@@ -1,0 +1,17 @@
+img {
+    height: 40px;
+    padding: 0;
+}
+
+.upload-preview-img {
+    height: auto;
+    max-width: 100px;
+}
+
+#add-button {
+    height: 20px;
+}
+
+#playlist-img {
+    margin-top: 10px;
+}
